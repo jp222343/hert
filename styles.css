@@ -20,6 +20,13 @@ main h4{
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    transition: .1s;
+    padding: 1px;
+}
+
+.sections a:hover{
+    transition: padding .1s ease-out;
+    padding: 5px;
 }
 
 .titles{
@@ -40,6 +47,8 @@ main h4{
 
 .project-blocks a:hover{
     padding: 13px 13px;
+    color: black;
+    background-color: white;
 }
 
 .project-blocks div{
@@ -47,6 +56,12 @@ main h4{
     border-radius: 30px;
     padding: 17px;
     width: 13%;
+    transition: .1s;
+}
+
+.project-blocks div:hover{
+    transition: padding .1s ease-out;
+    padding: 22px 22px 22px 22px;
 }
 
 .project-blocks h4{
@@ -76,6 +91,7 @@ nav a:hover:not(.home){
     padding: 20px;
     height: 320px;
     margin: 30px;
+    transition: .1s;
 }
 
 .blocks div a{
@@ -100,10 +116,19 @@ nav a:hover:not(.home){
     color: black;
 }
 
+.blocks div:hover{
+    transition: padding .1s ease-in-out;
+    padding: 30px 30px;
+}
+
+
+
 
 .blocks div a:hover{
     padding: 15px 20px 15px 20px;
 }
+
+
 
 .moreinfo{
     text-decoration: underline;
