@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="imgs/roundhert.png">
     <title>Hert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -16,6 +17,14 @@
                 <img src="imgs/logo_black.png" width="190" height="100" alt="Hert">
                 <a href="projetos.html">Projetos</a>
                 
+                    <button class="dropbtn">Mais
+                      <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                      <a href="info.html">Informações</a>
+                    </div>
+                 
+               
             </nav>
         </div>
         <hr>
@@ -34,11 +43,11 @@
             <h2>Novidades:</h2>
             <div class="blocks">
                 <div class="new1">
-                    <img src="imgs/irispfp.png" height="100" width="100">
+                    
                     <h3>Iris AI</h3>
-                    <h4>Reformulando uma API</h4>
+                    <h4>O nosso maior projeto, reformulando uma API e expandindo-a com mais funcionalidades. <a class="moreinfonews" target="_blank" href="https://console.groq.com/docs/quickstart">Mais informações</a></h4>
                     <br><br><br>
-                    <a target="_blank" href="https://RedoHertt.pythonanywhere.com">Acessar</a>
+                    <a target="_blank" href="https://RedoHertt.pythonanywhere.com"><i class="fa fa-link"></i>&nbsp;Acessar</a>
                 </div>
             </div>
         </div>
@@ -49,4 +58,38 @@
         <a href="info.html" class="moreinfo">Mais informações</a>
     </footer>
 </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropbtn = document.querySelector('.dropbtn');
+            const dropdownContent = document.querySelector('.dropdown-content');
+
+            let dropdownVisible = false;
+
+            dropbtn.addEventListener('click', function() {
+                if (dropdownVisible) {
+                    dropdownContent.style.opacity = '0';
+                    setTimeout(function() {
+                        dropdownContent.style.display = 'none';
+                    }, 0);
+                    dropdownVisible = false;
+                } else {
+                    dropdownContent.style.display = 'block';
+                    dropdownContent.style.opacity = '1';
+                    dropdownVisible = true;
+                }
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+                    dropdownContent.style.opacity = '0';
+                    setTimeout(function() {
+                        dropdownContent.style.display = 'none';
+                    }, 0);
+                    dropdownVisible = false;
+                }
+            });
+        });
+
+
+    </script>
 </html>
