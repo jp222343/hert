@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="imgs/roundhert.png">
     <title>Projetos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
     <style>
         .atual{
@@ -22,7 +23,14 @@
             class="sections">
             <a class="home" href="index.html"><img class="logo" src="imgs/logo_black.png" width="250" height="150" alt="Hert"></a>
                 <a class="atual" href="projetos.html">Projetos</a>
+                <button class="dropbtn">Mais
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="info.html">Informações</a>
+                </div>
             </nav>
+            
         </div>
         <hr>
        
@@ -82,4 +90,38 @@
         <a href="info.html" class="moreinfo">Mais informações</a>
     </footer>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dropbtn = document.querySelector('.dropbtn');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        let dropdownVisible = false;
+
+        dropbtn.addEventListener('click', function() {
+            if (dropdownVisible) {
+                dropdownContent.style.opacity = '0';
+                setTimeout(function() {
+                    dropdownContent.style.display = 'none';
+                }, 0);
+                dropdownVisible = false;
+            } else {
+                dropdownContent.style.display = 'block';
+                dropdownContent.style.opacity = '1';
+                dropdownVisible = true;
+            }
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
+                dropdownContent.style.opacity = '0';
+                setTimeout(function() {
+                    dropdownContent.style.display = 'none';
+                }, 0);
+                dropdownVisible = false;
+            }
+        });
+    });
+
+
+</script>
 </html>
